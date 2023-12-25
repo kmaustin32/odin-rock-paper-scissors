@@ -5,7 +5,12 @@
 const choices = ['rock', 'paper', 'scissors'];
 
 var computerChoice, 
-    playerChoice;
+    playerChoice,
+    computerScore = 0,
+    playerScore = 0;
+    roundsToWin = 0;
+
+roundsToWin = prompt("please enter number of rounds to win");
 
 function getComputerChoice () {
   computerChoice = choices[Math.floor(Math.random() * 3)]
@@ -33,17 +38,25 @@ function playRound () {
   if (playerChoice == computerChoice) {
     console.log("It's a tie! No one wins here! Or, um, everyone wins, maybe?");
   } else if (playerChoice == 'rock' && computerChoice == 'scissors') {
+    playerScore++;
     console.log("Congratulations! Rock breaks scissors! Player has bested the computer!");
   } else if (playerChoice == 'paper' && computerChoice == 'rock') {
+    playerScore++;
     console.log("Congratulations! Paper covers rock! Player has bested the computer!");
   } else if (playerChoice == 'scissors' && computerChoice == 'paper') {
+    playerScore++;
     console.log("Congratulations! Scissors cut paper! Player has bested the computer!");
   } else {
+    computerScore++;
     console.log("Sorry, you lose! Computer wins this round. We are doomed!")
+  };
+};
+
+const game = () => {
+  while (playerScore < roundsToWin && computerScore < roundsToWin) {
+    playRound();
   }
-}
+  console.log(`The game has been completed! computer: ${computerScore}; player: ${playerScore};`)
+};
 
-
-playRound();
-playRound();
-playRound();
+game();

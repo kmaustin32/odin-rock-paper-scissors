@@ -1,6 +1,12 @@
+body {
+  background-color: mediumslateblue;
+  background: linear-gradient(45deg, gray 35%, mediumslateblue 70%);
+  height: 100dvh;
+  overflow: hidden;
+}
 #title {
   text-align: center;
-  margin-top: 80px;
+  padding-top: 80px;
 }
 
 .main-container {
@@ -22,6 +28,16 @@
 .play-btn {
   width: 100px;
   height: 40px;
+  border: 3px solid black;
+  font-weight: bold;
+}
+
+.play-btn:hover {
+  background-color: dimgray;
+  color: whitesmoke;
+  transform: scale(1.2);
+  transition: all .5s ease;
+  border: 3px solid whitesmoke;
 }
 
 .score-container {

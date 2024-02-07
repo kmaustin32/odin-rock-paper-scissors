@@ -3,10 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Rock Paper Scissors Game</title>
+  <link rel="stylesheet" href="./style.css">
   <script src="rps.js"></script>
 </head>
 <body>
-  
+  <div id="title">
+    <h1>Play Rock, Paper, Scissors</h1>
+  </div>
+  <div class="main-container">
+    <div class="btn-container">
+      <button class="play-btn">Rock</button>
+      <button class="play-btn">Paper</button>
+      <button class="play-btn">Scissor</button>
+    </div>
+    <div class="score-container">
+      <h2>Current Score</h2>
+      <h3>Player: <span id="pl-score">0</span></h3>
+      <h3>Computer: <span id="com-score">0</span></h3>
+    </div>
+  </div>
 </body>
 </html>

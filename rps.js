@@ -69,18 +69,19 @@ let comScore = document.querySelector('#com-score');
 let buttons = document.querySelectorAll('.play-btn');
 
 function checkGame () {
+  let winner = '';
+
   if (playerScore == 5 || computerScore == 5) {
-    let winner = ''
     if (playerScore > computerScore) {
       winner  = "Player";
     } else {
       winner = "Computer";
     };
 
-    setTimeout(function(winner) {
+    setTimeout(function() {
       alert(`${winner} has won the game. Thanks for playing.`);
       resetGame();
-    }, 500);
+    }, 250);
   };
 };
 

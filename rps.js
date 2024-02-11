@@ -59,9 +59,41 @@ function playRound () {
 //   alert(`The game has been completed! computer: ${computerScore}; player: ${playerScore};`)
 // };
 
-let rock = document.querySelector('#rock');
-let paper = document.querySelector('#paper');
-let scissors = document.querySelector('#scissors');
-
 let plScore = document.querySelector('#pl-score');
 let comScore = document.querySelector('#com-score');
+let buttons = document.querySelectorAll('.play-btn');
+
+function checkGame () {
+  if (playerScore == 5 || computerScore == 5) {
+    let winner = ''
+    if (playerScore > computerScore) {
+      winner  = "Player";
+    } else {
+      winner = "Computer";
+    };
+
+    alert(`${winner} has won the game. Thanks for playing.`);
+    resetGame();
+  };
+};
+
+function resetGame() {
+  playerScore = 0;
+  computerScore = 0;
+  plScore.textContent = 0;
+  comScore.textContent = 0;
+}
+
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener('click', (e) => {
+    playerChoice = e.target.id;
+    console.log(playerChoice);
+
+    playRound();
+    plScore.textContent = playerScore;
+    comScore.textContent = computerScore;
+    console.log(playerScore, computerScore);
+
+    checkGame();
+  });
+};

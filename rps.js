@@ -50,6 +50,11 @@ function playRound () {
     computerScore++;
     console.log("Sorry, you lose! Computer wins this round. We are doomed!")
   };
+
+  plScore.textContent = playerScore;
+  comScore.textContent = computerScore;
+
+  console.log(playerScore, computerScore);
 };
 
 // const game = () => {
@@ -72,8 +77,10 @@ function checkGame () {
       winner = "Computer";
     };
 
-    alert(`${winner} has won the game. Thanks for playing.`);
-    resetGame();
+    setTimeout(function(winner) {
+      alert(`${winner} has won the game. Thanks for playing.`);
+      resetGame();
+    }, 500);
   };
 };
 
@@ -90,10 +97,6 @@ for (let i = 0; i < buttons.length; i++) {
     console.log(playerChoice);
 
     playRound();
-    plScore.textContent = playerScore;
-    comScore.textContent = computerScore;
-    console.log(playerScore, computerScore);
-
     checkGame();
   });
 };

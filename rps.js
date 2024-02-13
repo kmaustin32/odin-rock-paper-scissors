@@ -81,7 +81,7 @@ function checkGame () {
     setTimeout(function() {
       alert(`${winner} has won the game. Thanks for playing.`);
       resetGame();
-    }, 250);
+    }, 100);
   };
 };
 
